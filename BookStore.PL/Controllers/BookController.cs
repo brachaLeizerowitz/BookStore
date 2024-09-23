@@ -17,9 +17,9 @@ namespace BookStore.PL.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Book>> GetBooks()
+        public ActionResult<List<Book>> GetAllBooks()
         {
-            return _bookService.GetBooks();
+            return _bookService.GetAllBooks();
         }
     }
 }

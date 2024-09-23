@@ -9,6 +9,6 @@ namespace BookStore.BL.Interfaces
 {
     public interface IBookService
     {
-        public List<Book> GetBooks();
+        public List<Book> GetAllBooks();
     }
 }

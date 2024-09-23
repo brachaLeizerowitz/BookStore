@@ -18,9 +18,9 @@ namespace BookStore.BL.Services
             _book = book;   
         }
 
-        public List<Book> GetBooks()
+        public List<Book> GetAllBooks()
         {
-            return _book.GetBooks();
+            return _book.GetAllBooks();
         }
     }
 }

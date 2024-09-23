@@ -19,7 +19,7 @@ namespace BookStore.DAL.Repositories
             _db = db;
         }
 
-        public List<Book> GetBooks()
+        public List<Book> GetAllBooks()
         {
             return _db.Books.ToList();
 

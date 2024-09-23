@@ -10,6 +10,6 @@ namespace BookStore.DAL.Interfaces
 {
     public interface IBook
     {
-        public List<Book> GetBooks();
+        public List<Book> GetAllBooks();
     }
 }
