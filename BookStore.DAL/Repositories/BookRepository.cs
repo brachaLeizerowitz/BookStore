@@ -1,26 +1,30 @@
-﻿using BookStore.BL.Interfaces;
+﻿using BookStore.DAL.DataContext;
 using BookStore.DAL.Entities;
 using BookStore.DAL.Interfaces;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.BL.Services
+namespace BookStore.DAL.Repositories
 {
-    public class BookSrvice:IBookService
+    public class BookRepository : IBook
     {
-        private IBook _book;
+        private BookStoreContext _db;
 
-        public BookSrvice(IBook book)
+        public BookRepository(BookStoreContext db)
         {
-            _book = book;   
+            _db = db;
         }
 
         public List<Book> GetBooks()
         {
-            return _book.GetBooks();
+            return _db.Books.ToList();
+
         }
+
+
     }
 }

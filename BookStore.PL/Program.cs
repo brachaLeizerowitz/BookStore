@@ -1,7 +1,9 @@
 using BookStore.BL.Interfaces;
 using BookStore.BL.Services;
+using BookStore.DAL.DataContext;
 using BookStore.DAL.Interfaces;
 using BookStore.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IBook,Book> ();
+builder.Services.AddScoped<IBook,BookRepository> ();
 builder.Services.AddScoped<IBookService,BookSrvice> ();
+
+builder.Services.AddDbContext <BookStoreContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("sql"));
+});
 
 var app = builder.Build();
 
