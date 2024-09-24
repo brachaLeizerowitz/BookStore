@@ -25,6 +25,12 @@ namespace BookStore.DAL.Repositories
 
         }
          
+        public string CreateBook(Book book)
+        {
+            _db.Books.Add(book);
+            _db.SaveChanges();
+            return book.Upc;
+        }
 
 
     }

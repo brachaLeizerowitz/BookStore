@@ -11,5 +11,7 @@ namespace BookStore.DAL.Interfaces
     public interface IBook
     {
         public List<Book> GetAllBooks();
+
+        public string CreateBook(Book book);
     }
 }

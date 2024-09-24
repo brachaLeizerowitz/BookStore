@@ -22,5 +22,13 @@ namespace BookStore.BL.Services
         {
             return _book.GetAllBooks();
         }
+
+        public string CreateBook(Book book)
+        {
+            //איך מוסיפים לסטרינג ניו?
+           // book.Upc=new();
+            return _book.CreateBook(book);
+        }
     }
+
 }

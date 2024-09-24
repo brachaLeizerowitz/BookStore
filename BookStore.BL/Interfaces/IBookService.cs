@@ -10,5 +10,6 @@ namespace BookStore.BL.Interfaces
     public interface IBookService
     {
         public List<Book> GetAllBooks();
+        public string CreateBook(Book book);
     }
 }

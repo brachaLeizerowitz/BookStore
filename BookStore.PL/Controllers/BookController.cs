@@ -22,6 +22,12 @@ namespace BookStore.PL.Controllers
             return _bookService.GetAllBooks();
         }
 
+        [HttpPost]
+        public ActionResult<string> AddBook(Book book)
+        {
+            return _bookService.CreateBook(book);
+        }
+
        
     }
 }
