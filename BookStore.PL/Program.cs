@@ -22,7 +22,23 @@ builder.Services.AddDbContext <BookStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sql"));
 });
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        // Allow any domain- *  or only specific domain-http://localhost:3000
+        policy.WithOrigins("*")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin();
+    });
+});  
+
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,6 +46,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
