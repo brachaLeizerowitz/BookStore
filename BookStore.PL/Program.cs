@@ -22,8 +22,8 @@ builder.Services.AddDbContext <BookStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sql"));
 });
 
-<<<<<<< HEAD
 
+// Add CORS services
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -34,29 +34,13 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .AllowAnyOrigin();
     });
-});  
-=======
-// Add CORS services
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
 });
->>>>>>> 2249c5b84364d1a328778dcc4be9aeffe41a5181
+
 
 var app = builder.Build();
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2249c5b84364d1a328778dcc4be9aeffe41a5181
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
