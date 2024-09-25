@@ -29,7 +29,7 @@ namespace BookStore.PL.Controllers
         }
 
 
-        [HttpDelete]
+        [HttpDelete("{bookUPC}")]
          public void DeleteBook(string bookUPC)
         {
             _bookService.DeleteBook(bookUPC);
