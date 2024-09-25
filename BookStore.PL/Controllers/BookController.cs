@@ -23,11 +23,17 @@ namespace BookStore.PL.Controllers
         }
 
         [HttpPost]
-        public ActionResult<string> AddBook(Book book)
+        public ActionResult<string> NewBook(Book book)
         {
-            return _bookService.CreateBook(book);
+            return _bookService.NewBook(book);
         }
 
+
+        [HttpDelete]
+         public void DeleteBook(string bookUPC)
+        {
+            _bookService.DeleteBook(bookUPC);
+        }
        
     }
 }

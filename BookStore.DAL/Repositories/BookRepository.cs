@@ -25,11 +25,19 @@ namespace BookStore.DAL.Repositories
 
         }
          
-        public string CreateBook(Book book)
+        public string NewBook(Book book)
         {
             _db.Books.Add(book);
             _db.SaveChanges();
             return book.Upc;
+        }
+
+
+        public void DeleteBook(string bookUPC)
+        {
+            Book book = _db.Books.SingleOrDefault(book => book.Upc == bookUPC);
+            _db.Books.Remove(book);
+            _db.SaveChanges();
         }
 
 
